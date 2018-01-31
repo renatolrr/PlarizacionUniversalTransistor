@@ -1,2 +1,3 @@
 # PlarizacionUniversalTransistor
-Plarización Universal o por división de tensión
+Plarización universal o por división de tensión  
+Problema tipo
