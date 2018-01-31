@@ -52,5 +52,45 @@ Luego se tiene:
 \begin{equation}
 V_{bb}=I_{b}R_{b}+V_{be}+I_{e}R_{e}
 \end{equation}
+Vamos a calcular$I_{b}$ y para ello utilizamos las ecuaciones (1) y (2):
+\[I_{e}=I_{b}+I_{c}\]
+\[I_{e}=I_{b}+\beta*I_{b}\]
+\[I_{e}=I_{b}(\beta+1)\]
+Si lo sustituimos en la ecuación (3) se tiene:
+\[V_{bb}=I_{b}R_{b}+V_{be}+I_{e}R_{e}\]
+\[V_{bb}=I_{b}R_{b}+V_{be}+I_{b}(\beta+1)R_{e}\]
+\[V_{bb}=I_{b}[R_{b}+(\beta+1)R_{e}]+V_{be}\]
+y despejando se tiene:
+\[I_{b}=\frac{V_{bb}-V_{be}}{[R_{b}+(\beta+1)R_{e}]}\]
+Y si sustituimos nuestros valores:
+\[I_{b}=\frac{1.8V-0.7V}{[1.8K+(100+1)2.1K]}=5.142 \mu A\]
+Ojo:$V_{be}=0.7V$ ya que tenemos el diodo del transistor.
+\\ 
+Ya podemos calcular $I_{c}$ a partir de la ecuación (2) que en nuestro caso nos da:
+\[I_{c}=\beta*I_{b}\]
+\[I_{c}=100*5.142 \mu A= 0.514 mA\]
+Y  con la ecuación (1) tenemos $I_{e}$ que en nuestro caso:
+\[I_{e}=I_{b}+I_{c}\]
+\[I_{e}=0.519 mA\]
+Podemos decir que $I_{CQ}=0.514 mA$
+\subsection{Malla colector}
+\begin{center}
+\includegraphics[scale=1]{Images/Imagen7.jpg}
+\end{center}
+Y la ecuación correspondiente es:
+\begin{equation}
+V_{cc}=I_{c}R_{c}+V_{ce}+I_{e}R_{e}
+\end{equation}
+Vamos a calcular $V_{ce}$ :
+\[V_{cc}=I_{c}R_{c}+V_{ce}+I_{e}R_{e}\]
+\[V_{ce}= V_{cc}-I_{c}R_{c}-I_{e}R_{e}\]
+Y si lo sustituimos en nuestro caso:
+\[V_{ce}= 10V-0.5141mA-0.519mA*2.1K= 7.06V\]
+Y podemos decir que $V_{CEQ}=7V$
+\section{Recta de carga}
+\subsection{Demostar que la Ie es igual a Ic para ganancias muy grandes}
+\subsection{Calculo de la ecuación de la recta de carga}
+\subsection{Corte con los ejes}
+
 
 \end{document}
