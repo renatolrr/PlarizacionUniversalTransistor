@@ -1,6 +1,7 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{pdfpages}
 \author{renatolrr}
 \title{Polarización universal o por divisor de tensión}
 \begin{document}
@@ -64,7 +65,7 @@ y despejando se tiene:
 \[I_{b}=\frac{V_{bb}-V_{be}}{[R_{b}+(\beta+1)R_{e}]}\]
 Y si sustituimos nuestros valores:
 \[I_{b}=\frac{1.8V-0.7V}{[1.8K+(100+1)2.1K]}=5.142 \mu A\]
-Ojo:$V_{be}=0.7V$ ya que tenemos el diodo del transistor.
+Ojo: $V_{be}=0.7V$ ya que tenemos el diodo del transistor.
 \\ 
 Ya podemos calcular $I_{c}$ a partir de la ecuación (2) que en nuestro caso nos da:
 \[I_{c}=\beta*I_{b}\]
@@ -89,8 +90,37 @@ Y si lo sustituimos en nuestro caso:
 Y podemos decir que $V_{CEQ}=7V$
 \section{Recta de carga}
 \subsection{Demostrar que la Ie es igual a Ic para ganancias muy grandes}
+De la ecuación (2) se tiene:
+\[I_{b}=\frac{I_{b}}{\beta}\]
+Y sustituyendo en (1):
+\[I_{e}=I_{c}+I_{b}\]
+\[\Rightarrow I_{e}=I_{c}+\frac{I_{b}}{\beta}\]
+\[\Rightarrow I_{e}=I_{c}*(\frac{1}{\beta}+1)\]
+\[\Rightarrow I_{e}=I_{c}*(\frac{\beta+1}{\beta})\]
+Y si $\beta$ es muy grande:
+\[I_{e}\simeq I_{c}\] 
 \subsection{Calculo de la ecuación de la recta de carga}
+Si $\beta$ es muy grande, tenemos $I_{e}\simeq I_{c}$ 
+\\
+Y de la malla del colector (Punto 2) teníamos la ecuación (4):
+\[V_{cc}=I_{c}R_{c}+V_{ce}+I_{e}R_{e}\]
+\begin{equation}
+\Rightarrow V_{cc}=V_{ce}+I_{c}(R_{c}*R_{e})
+\end{equation}
 \subsection{Corte con los ejes}
-
-
+\subsubsection{Punto corte eje vertical}
+Hacemos $V_{ce}=0$ y de  la ecuación (5) se tiene:
+\[V_{cc}=I_{c}(R_{c}*R_{e})\]
+\[\Rightarrow I_{c}=\frac{V_{cc}}{R_{c}*R_{e}}\]
+y en nuestro caso:
+\[V_{cc}=I_{c}(R_{c}*R_{e})\]
+\[I_{c}=\frac{10V}{3.6k*2.1k} = 1.754 mA \]
+\subsubsection{Punto corte eje horizontal}
+Hacemos $I_{c}=0$ y de  la ecuación (5) se tiene:
+\[V_{cc}=V_{ce}\]
+y en nuestro caso:
+\[V_{ce}=10V\]
+\subsection{Representación gráfica recta de carga del circuito}
+\includepdf[pages=-]{Images/RectaCarga}
+\includegraphics[scale=1]{Images/PN2222.png}
 \end{document}
